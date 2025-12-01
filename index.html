@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>PATITAS CONECTADAS - Seguimiento inteligente para mascotas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- =========================================================
+       NAVBAR PRINCIPAL
+       ========================================================= -->
+  <header class="navbar">
+    <div class="container navbar__content">
+      <!-- Logo + nombre -->
+      <div class="navbar__logo">
+        <img
+          src="image\image (1).png"
+          alt="Logo PAPITAS CONECTADAS"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">PATITAS CONECTADAS</span>
+      </div>
+
+      <!-- Botón hamburguesa (solo se ve en móvil) -->
+      <button class="navbar__toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Links de navegación -->
+      <nav class="navbar__links" id="navbarLinks">
+        <a href="#hero">Inicio</a>
+        <a href="#video-demo">Cómo funciona</a>
+        <a href="#problema">Problema</a>
+        <a href="#solucion">Solución</a>
+        <a href="#funcionalidades">Funciones</a>
+        <a href="#demo">Demo</a>
+        <a href="#comparacion">Comparación</a>
+        <a href="#contacto" class="navbar__cta btn btn--nav">
+          🌱 Conectar a mis papitas
+        </a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <p class="hero-pill">💚 MVP · Seguimiento clínico inteligente para mascotas</p>
+
+    <h1 class="hero-title">
+      Digitaliza la salud de tus papitas
+      <span>y conecta todo con su veterinaria 🐾</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      PAPITAS CONECTADAS es una plataforma que une a las veterinarias y a los dueños:
+      el <strong>panel profesional</strong> registra peso, vacunas, tratamientos, ventas e ingresos;
+      la <strong>app del dueño</strong> muestra historia clínica, recordatorios y recompensas
+      por completar cada tratamiento.
+    </p>
+
+    <div class="hero-cta">
+      <a href="vet-panel.html" class="btn btn-primary">
+        🏥 Ver demo para veterinarias
+      </a>
+      <a href="login.html" class="btn btn-outline">
+        📲 Probar demo como dueño
+      </a>
+    </div>
+
+    <p class="hero-note">
+      Diseñado para clínicas que quieren dejar el papel y los chats desordenados, y
+      <strong>medir el antes y el después</strong> de cada tratamiento.
+    </p>
+  </div>
+
+  <div class="hero-media">
+    <div class="hero-phone-frame">
+      <!-- Aquí SOLO cambias la ruta de la imagen por tu mockup -->
+      <img
+        src="img/mockups/app-papitas.png"
+        alt="Vista previa de la app móvil PAPITAS CONECTADAS"
+        class="hero-phone-img"
+      />
+    </div>
+    <p class="hero-media-caption">
+      Mockup de la app móvil <strong>PAPITAS CONECTADAS</strong>
+    </p>
+  </div>
+</section>
+
+  <!-- =========================================================
+       SECCIÓN VIDEO DEMO (ESPACIO PARA TU VIDEO)
+       ========================================================= -->
+  <section id="video-demo" class="section section--video">
+    <div class="container">
+      <div class="section__header">
+        <h2>🎥 Así funcionará PAPITAS CONECTADAS</h2>
+        <p class="section__subtitle">
+          Aquí podrás mostrar un video corto explicando el flujo completo:
+          registro en la veterinaria, seguimiento, recordatorios y vista del dueño.
+        </p>
+      </div>
+
+      <div class="video-wrapper">
+        <!-- Cuando tengas tu video, puedes reemplazar esto por un iframe o etiqueta <video> -->
+        <!-- EJEMPLO:
+        <iframe src="https://www.youtube.com/embed/tu_video" frameborder="0" allowfullscreen></iframe>
+        -->
+        <div class="video-placeholder">
+          <p>
+            Espacio reservado para tu video demo 🎬<br />
+            (Aquí irán el iframe de YouTube o la etiqueta <code>&lt;video&gt;</code>).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROBLEMA DETECTADO (CARDS CON EMOJIS)
+       ========================================================= -->
+  <section id="problema" class="section section--light">
+    <div class="container">
+      <div class="section__header">
+        <h2>🚨 El problema actual en las veterinarias</h2>
+        <p class="section__subtitle">
+          Lo que encontramos al hablar con veterinarias y dueños de mascotas.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card card--problem">
+          <h3>🧩 Tratamientos incompletos</h3>
+          <p>
+            Muchos dueños no regresan a los controles programados y dejan a medias
+            tratamientos importantes para la salud de la mascota.
+          </p>
+        </div>
+        <div class="card card--problem">
+          <h3>📱 Recordatorios desordenados</h3>
+          <p>
+            Se usan papeles, agendas físicas o chats de WhatsApp difíciles de
+            rastrear cuando hay muchos pacientes.
+          </p>
+        </div>
+        <div class="card card--problem">
+          <h3>📉 Sin datos para mejorar</h3>
+          <p>
+            La clínica no puede medir cuántos tratamientos se cumplen, dónde se
+            pierden pacientes ni cómo mejorar su servicio.
+          </p>
+        </div>
+        <div class="card card--problem">
+          <h3>📂 Historia clínica dispersa</h3>
+          <p>
+            La información de la mascota está repartida entre fichas físicas, fotos
+            y mensajes, lo que complica el seguimiento.
+          </p>
+        </div>
+        <div class="card card--problem">
+          <h3>🔕 Falta de conexión con el dueño</h3>
+          <p>
+            El dueño no tiene una guía clara con fechas, recomendaciones y
+            advertencias sobre la salud de su mascota.
+          </p>
+        </div>
+        <div class="card card--problem">
+          <h3>💸 Pérdida de ingresos</h3>
+          <p>
+            Cada control perdido es una oportunidad de atención, fidelización y
+            venta de servicios que la clínica no aprovecha.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SOLUCIÓN PROPUESTA (CARDS CON EMOJIS)
+       ========================================================= -->
+  <section id="solucion" class="section section--solution">
+    <div class="container">
+      <div class="section__header">
+        <h2>💚 La solución: PAPITAS CONECTADAS</h2>
+        <p class="section__subtitle">
+          Unimos a la veterinaria y al dueño de la mascota en un mismo flujo de seguimiento.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card card--solution">
+          <h3>📋 Registro estructurado</h3>
+          <p>
+            La veterinaria registra cada mascota, diagnóstico y plan de tratamiento
+            en un sistema único y ordenado.
+          </p>
+        </div>
+        <div class="card card--solution">
+          <h3>🔔 Recordatorios inteligentes</h3>
+          <p>
+            El sistema genera recordatorios automatizados para dosis, vacunas y
+            controles, enviados al dueño.
+          </p>
+        </div>
+        <div class="card card--solution">
+          <h3>📊 Panel de seguimiento</h3>
+          <p>
+            La clínica ve un panel con pacientes al día, en riesgo y atrasados,
+            para tomar decisiones rápidas.
+          </p>
+        </div>
+        <div class="card card--solution">
+          <h3>🩺 Historia clínica digital</h3>
+          <p>
+            Cada mascota cuenta con una historia clínica accesible, clara y actualizada.
+          </p>
+        </div>
+        <div class="card card--solution">
+          <h3>📱 Guía clara para el dueño</h3>
+          <p>
+            El dueño de la mascota revisa fácilmente próximas citas, recomendaciones
+            y alertas importantes.
+          </p>
+        </div>
+        <div class="card card--solution">
+          <h3>📈 Métricas antes vs. después</h3>
+          <p>
+            La veterinaria puede medir el impacto del sistema en el cumplimiento de
+            tratamientos y controles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8 FUNCIONALIDADES PRINCIPALES DEL MVP
+       ========================================================= -->
+  <section id="funcionalidades" class="section section--features">
+    <div class="container">
+      <div class="section__header">
+        <h2>🧠 Lo que hará nuestro MVP</h2>
+        <p class="section__subtitle">
+          8 funcionalidades clave que validan el valor de PAPITAS CONECTADAS.
+        </p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="card card--feature">
+          <h3>🐾 1. Registro de mascotas</h3>
+          <p>Datos básicos, especie, raza, edad, peso y datos del dueño.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>🩺 2. Planes de tratamiento</h3>
+          <p>Definición de dosis, vacunas, fechas y tipo de tratamiento.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>🗓️ 3. Agenda de controles</h3>
+          <p>Calendario de controles y citas programadas por la veterinaria.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>🔔 4. Recordatorios automáticos</h3>
+          <p>Alertas al dueño sobre dosis, vacunas y próximos controles.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>📋 5. Panel de pacientes</h3>
+          <p>Vista para la veterinaria con tratamientos activos, en riesgo y completados.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>📂 6. Historia clínica digital</h3>
+          <p>Registro de consultas, tratamientos y evolución de cada mascota.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>💡 7. Recomendaciones al dueño</h3>
+          <p>Notas y cuidados especiales que la veterinaria deja visibles al propietario.</p>
+        </div>
+        <div class="card card--feature">
+          <h3>📈 8. Resumen antes/después</h3>
+          <p>Indicadores básicos para comparar la situación previa al sistema vs. después.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DEMO: PANEL VETERINARIA + VISTA DUEÑO (LINK A OTRA PESTAÑA)
+       ========================================================= -->
+  <section id="demo" class="section section--demo">
+    <div class="container">
+      <div class="section__header">
+        <h2>🧪 Demo de nuestro sistema</h2>
+        <p class="section__subtitle">
+          Primero, la vista de la veterinaria (quien registra y hace el seguimiento).
+          Luego, la vista del dueño, que consulta su app.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- Card demo veterinaria -->
+        <div class="card card--demo">
+          <h3>🏥 Panel de la veterinaria</h3>
+          <p>
+            Registro de mascota, peso, vacunas, tratamientos, controles y seguimiento
+            completo de la historia clínica digital.
+          </p>
+          <a
+            href="vet-panel.html"
+            target="_blank"
+            class="btn btn--primary btn--full"
+          >
+            Ver demo del panel de veterinaria
+          </a>
+          <p class="demo__note">
+            *Esta demo muestra cómo la clínica registra y actualiza la información.
+          </p>
+        </div>
+
+        <!-- Card demo dueño -->
+        <div class="card card--demo">
+          <h3>📱 Vista del dueño de la mascota</h3>
+          <p>
+            Consulta de próximas citas, recordatorios, historial de controles y
+            recomendaciones que dejó la veterinaria para su papita.
+          </p>
+          <a
+            href="owner-panel.html"
+            target="_blank"
+            class="btn btn--secondary btn--full"
+          >
+            Ver demo de la app del dueño
+          </a>
+          <p class="demo__note">
+            *Simula cómo el dueño vería la información registrada por la veterinaria.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       QUÉ MÁS OFRECE LA STARTUP
+       ========================================================= -->
+  <section class="section section--extra">
+    <div class="container">
+      <div class="section__header">
+        <h2>✨ ¿Qué más ofrece PAPITAS CONECTADAS?</h2>
+        <p class="section__subtitle">
+          No es solo software, es acompañamiento para cambiar la forma de trabajar.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card card--extra">
+          <h3>🎓 Capacitación inicial</h3>
+          <p>
+            Guía para que la clínica adopte el sistema de forma ordenada y sin
+            interrumpir su operación diaria.
+          </p>
+        </div>
+        <div class="card card--extra">
+          <h3>📍 Ajustes a la realidad local</h3>
+          <p>
+            Configuración adaptada a la forma de trabajar de las veterinarias
+            peruanas y sus necesidades reales.
+          </p>
+        </div>
+        <div class="card card--extra">
+          <h3>🤝 Soporte cercano</h3>
+          <p>
+            Acompañamiento durante la fase de prueba del MVP para recoger feedback
+            y mejorar el sistema.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       COMPARACIÓN TRADICIONAL VS PAPITAS CONECTADAS
+       ========================================================= -->
+  <!-- =========================================================
+     COMPARACIÓN TRADICIONAL VS PAPITAS CONECTADAS
+     ========================================================= -->
+<section id="comparacion" class="section section--compare">
+  <div class="container">
+    <div class="section__header">
+      <h2>⚖️ Antes y después de PAPITAS CONECTADAS</h2>
+      <p class="section__subtitle">
+        Diferencias claras entre el modo tradicional y nuestro sistema.
+      </p>
+    </div>
+
+    <!-- Bloque de comparación en columnas -->
+    <div class="compare-grid">
+      <!-- Columna izquierda: modo tradicional -->
+      <div class="compare-column">
+        <h3>🗂️ Modo tradicional</h3>
+        <ul>
+          <li>📄 Historias en papel o fotos sueltas.</li>
+          <li>📱 Recordatorios por WhatsApp sin orden.</li>
+          <li>❓ No se sabe cuántos tratamientos se completan.</li>
+          <li>⏳ Pérdida de tiempo buscando información.</li>
+          <li>💸 Oportunidades de control y servicios perdidas.</li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha: con PAPITAS CONECTADAS -->
+      <div class="compare-column compare-column--highlight">
+        <h3>💻 Con PAPITAS CONECTADAS</h3>
+        <ul>
+          <li>🐾 Historia clínica digital por cada mascota.</li>
+          <li>🔔 Recordatorios automáticos y registrados.</li>
+          <li>📊 Datos de cumplimiento antes/después del sistema.</li>
+          <li>⚡ Información centralizada y rápida de consultar.</li>
+          <li>💚 Mayor fidelización y continuidad en los tratamientos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bloque de acción: botón + formulario oculto -->
+    <div class="compare-contact">
+      <p class="compare-contact__text">
+        Si quieres pasar del modo tradicional a PAPITAS CONECTADAS,
+        déjanos tus datos y te escribimos para conversar una posible prueba del MVP. 🌱
+      </p>
+
+      <!-- Botón que mostrará/ocultará el formulario -->
+      <button id="compare-contact-btn" class="btn btn--primary compare-contact__btn">
+        📩 Quiero que me contacten
+      </button>
+
+      <!-- Formulario oculto por defecto -->
+      <div id="compare-contact-form" class="compare-contact__form">
+  <div class="compare-contact__badge">
+    ✨ Formulario de interés para veterinarias
+  </div>
+
+  <p class="compare-contact__info">
+    Déjanos tus datos y una breve idea de lo que te gustaría mejorar en tu clínica.
+    Esta es una simulación del formulario real del MVP.
+  </p>
+
+  <form>
+    <!-- Fila 1: nombre + clínica -->
+    <div class="compare-contact__row">
+      <div class="form__group">
+        <label for="cmp-name">👩‍⚕️ Nombre y apellido</label>
+        <input
+          type="text"
+          id="cmp-name"
+          placeholder="Ej: Dra. Ana Pérez"
+        />
+      </div>
+      <div class="form__group">
+        <label for="cmp-clinic">🏥 Nombre de la clínica</label>
+        <input
+          type="text"
+          id="cmp-clinic"
+          placeholder="Ej: Veterinaria El Guerrero"
+        />
+      </div>
+    </div>
+
+    <!-- Fila 2: ciudad + WhatsApp -->
+    <div class="compare-contact__row">
+      <div class="form__group">
+        <label for="cmp-city">📍 Ciudad</label>
+        <input
+          type="text"
+          id="cmp-city"
+          placeholder="Ej: Trujillo"
+        />
+      </div>
+      <div class="form__group">
+        <label for="cmp-whatsapp">💬 WhatsApp</label>
+        <input
+          type="text"
+          id="cmp-whatsapp"
+          placeholder="+51 ..."
+        />
+      </div>
+    </div>
+
+    <!-- Fila 3: mensaje -->
+    <div class="form__group">
+      <label for="cmp-message">💡 ¿Qué te gustaría mejorar en tu clínica?</label>
+      <textarea
+        id="cmp-message"
+        rows="3"
+        placeholder="Ej: seguimiento de tratamientos, control de vacunas, recordatorios para dueños..."
+      ></textarea>
+    </div>
+
+    <!-- Botón + mensaje demo -->
+    <button type="button" class="btn btn--secondary btn--full compare-contact__submit">
+      ✅ Enviar interés (demo)
+    </button>
+
+    <p class="compare-contact__note">
+      *MVP demo: en una versión real, estos datos llegarían a nuestro correo o sistema de gestión.
+    </p>
+  </form>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- =========================================================
+       FOOTER / CONTACTO
+       ========================================================= -->
+  <!-- =========================================================
+     FOOTER SUPER COMPLETO
+     ========================================================= -->
+<footer id="contacto" class="footer">
+  <div class="container footer__content">
+
+    <!-- COLUMNA 1: Marca -->
+    <div class="footer__col">
+      <h3 class="footer__title">🐾 PAPITAS CONECTADAS</h3>
+      <p class="footer__text">
+        Conectamos la salud de las mascotas con sus veterinarias mediante
+        seguimiento inteligente, recordatorios automáticos y una historia
+        clínica digital siempre disponible.
+      </p>
+      <p class="footer__location">📍 Trujillo, Perú</p>
+    </div>
+
+    <!-- COLUMNA 2: Navegación -->
+    <div class="footer__col">
+      <h4 class="footer__subtitle">🔗 Navegación</h4>
+      <ul class="footer__links">
+        <li><a href="#hero">🏠 Inicio</a></li>
+        <li><a href="#problema">🚨 Problema</a></li>
+        <li><a href="#solucion">💚 Solución</a></li>
+        <li><a href="#funcionalidades">🧠 Funciones</a></li>
+        <li><a href="#demo">🧪 Demo</a></li>
+        <li><a href="#comparacion">⚖️ Comparación</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMNA 3: Contacto -->
+    <div class="footer__col">
+      <h4 class="footer__subtitle">📞 Contacto</h4>
+      <ul class="footer__links">
+        <li>
+          ✉️ Email:
+          <a href="mailto:contacto@papitasconectadas.com">
+            contacto@papitasconectadas.com
+          </a>
+        </li>
+        <li>
+          💬 WhatsApp:
+          <a href="https://wa.me/51999999999" target="_blank">
+            +51 999 999 999
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- COLUMNA 4: Redes Sociales -->
+    <div class="footer__col">
+      <h4 class="footer__subtitle">🌐 Síguenos</h4>
+      <div class="footer__social">
+        <a href="#" target="_blank">📸 Instagram</a>
+        <a href="#" target="_blank">📘 Facebook</a>
+        <a href="#" target="_blank">💼 LinkedIn</a>
+        <a href="#" target="_blank">🎥 TikTok</a>
+        <a href="#" target="_blank">🐦 Twitter/X</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="footer__bottom">
+    <p>© 2025 PAPITAS CONECTADAS · Todos los derechos reservados · 🐕🐈🌱</p>
+  </div>
+</footer>
+
+
+  <!-- JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>

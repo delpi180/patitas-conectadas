@@ -1,0 +1,642 @@
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f1f5f9;
+  color: #111827;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+:root {
+  --color-primary: #16a34a;
+  --color-primary-dark: #15803d;
+  --color-secondary: #22c55e;
+  --color-bg-panel: #eff6ff;
+  --color-muted: #6b7280;
+  --radius-card: 18px;
+  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.13);
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+.topbar {
+  height: 60px;
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #ecfdf5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.topbar__logo {
+  font-size: 1.6rem;
+}
+
+.topbar__brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar__title {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.topbar__subtitle {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.topbar__link {
+  color: #fefce8;
+  text-decoration: none;
+}
+
+.topbar__link:hover {
+  text-decoration: underline;
+}
+
+.topbar__user {
+  background-color: rgba(15, 118, 110, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   LAYOUT PRINCIPAL
+   ========================================================= */
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: calc(100vh - 60px);
+}
+
+/* SIDEBAR */
+.sidebar {
+  background-color: var(--color-bg-panel);
+  padding: 1.5rem 1.25rem;
+  border-right: 1px solid #dbeafe;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* CONTENIDO PRINCIPAL */
+.content {
+  padding: 1.8rem 1.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* =========================================================
+   CARDS GENERALES
+   ========================================================= */
+.card {
+  background-color: #ffffff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  padding: 1.3rem 1.4rem;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.card__subtitle {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.card__header {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card__note {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   RESUMEN (SIDEBAR)
+   ========================================================= */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.summary-item {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.summary-value--green {
+  color: #15803d;
+}
+
+.summary-value--yellow {
+  color: #b45309;
+}
+
+.summary-value--red {
+  color: #b91c1c;
+}
+
+/* =========================================================
+   FILTROS (SIDEBAR)
+   ========================================================= */
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #374151;
+}
+
+.filter-btn--active,
+.filter-btn:hover {
+  background-color: #dcfce7;
+  border-color: #16a34a;
+  color: #166534;
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+.content__header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.content__subtitle {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   TABLA DE PACIENTES
+   ========================================================= */
+.table-wrapper {
+  margin-top: 0.7rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.patients-table thead {
+  background-color: #f3f4ff;
+}
+
+.patients-table th,
+.patients-table td {
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.patients-table tbody tr:hover {
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+/* =========================================================
+   CONTROLES DE TABLA (BUSCADOR)
+   ========================================================= */
+.table-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-input {
+  position: relative;
+  min-width: 260px;
+}
+
+.search-input__icon {
+  position: absolute;
+  left: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.search-input input {
+  width: 100%;
+  padding: 0.4rem 0.7rem 0.4rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+.search-input input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+}
+
+@media (max-width: 640px) {
+  .card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .table-controls {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+
+
+/* Badge de estado */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.badge--aldia {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge--proximo {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.badge--atrasado {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Botón de acción en tabla */
+.table-action-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+/* =========================================================
+   FORMULARIO + DETALLE (GRID INFERIOR)
+   ========================================================= */
+.content__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1.2rem;
+}
+
+/* Formulario */
+.form {
+  margin-top: 0.5rem;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.form__group {
+  margin-bottom: 0.8rem;
+}
+
+.form__group label {
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #064e3b;
+}
+
+.form__group input,
+.form__group select,
+.form__group textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.form__group input:focus,
+.form__group select:focus,
+.form__group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+}
+
+.form__message {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-primary-dark);
+}
+
+/* Botón */
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Detalle historia clínica */
+.detail-empty,
+.detail-content {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.detail-empty {
+  color: var(--color-muted);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.detail-name {
+  font-weight: 600;
+}
+
+.detail-tag {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+.detail-list {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.detail-list li + li {
+  margin-top: 0.3rem;
+}
+
+.detail-label {
+  font-weight: 600;
+}
+
+/* Títulos dentro del detalle */
+.detail-section-title {
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.detail-owner,
+.detail-id {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.detail-status {
+  text-align: right;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+/* Historial de registros */
+.history-list {
+  list-style: none;
+  margin-top: 0.4rem;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  padding: 0.6rem 0.7rem;
+  max-height: 190px;
+  overflow-y: auto;
+}
+
+.history-item + .history-item {
+  margin-top: 0.45rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.45rem;
+}
+
+.history-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.history-text {
+  font-size: 0.9rem;
+}
+
+/* Formulario para agregar registros al historial */
+.history-form {
+  margin-top: 0.7rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 12px;
+  background-color: #ecfeff;
+}
+
+.history-form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 0.4fr);
+  gap: 0.6rem;
+}
+
+/* Formulario de edición del plan actual dentro del detalle */
+.detail-edit-form {
+  margin-top: 0.4rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 12px;
+  background-color: #f0fdf4;
+}
+
+/* Botones adicionales */
+.btn--secondary {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+.btn--secondary:hover {
+  background-color: #0284c7;
+}
+
+.btn--ghost {
+  background-color: #f9fafb;
+  color: #111827;
+  border: 1px dashed #9ca3af;
+}
+
+.btn--ghost:hover {
+  background-color: #e5e7eb;
+}
+
+/* Mensaje de recordatorio */
+.reminder-row {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.reminder-message {
+  font-size: 0.8rem;
+  color: #16a34a;
+}
+
+/* Responsive formulario interno */
+@media (max-width: 700px) {
+  .history-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar .card {
+    flex: 1 1 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 1.4rem 1.1rem 2rem;
+  }
+
+  .content__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    height: auto;
+    padding: 0.6rem 1rem;
+  }
+
+  .layout {
+    min-height: auto;
+  }
+}

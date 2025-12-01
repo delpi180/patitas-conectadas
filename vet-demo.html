@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Veterinaria · PAPITAS CONECTADAS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/vet-demo.css" />
+</head>
+<body>
+  <!-- =========================================================
+       BARRA SUPERIOR DEL PANEL
+       ========================================================= -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <span class="topbar__logo">🐾</span>
+      <div class="topbar__brand">
+        <span class="topbar__title">PAPITAS CONECTADAS</span>
+        <span class="topbar__subtitle">Panel de la veterinaria</span>
+      </div>
+    </div>
+    <div class="topbar__right">
+      <a href="index.html" class="topbar__link">⬅ Volver a la landing</a>
+      <span class="topbar__user">👩‍⚕️ Demo · Vet</span>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       LAYOUT PRINCIPAL: SIDEBAR + CONTENIDO
+       ========================================================= -->
+  <main class="layout">
+    <!-- =========================
+         SIDEBAR: RESUMEN + FILTROS
+         ========================= -->
+    <aside class="sidebar">
+      <!-- Resumen de estados -->
+      <section class="card card--summary">
+        <h2 class="card__title">Resumen de pacientes</h2>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span class="summary-label">Activos</span>
+            <span id="sum-activos" class="summary-value">0</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Al día</span>
+            <span id="sum-aldia" class="summary-value summary-value--green">0</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Próximos</span>
+            <span id="sum-proximos" class="summary-value summary-value--yellow">0</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Atrasados</span>
+            <span id="sum-atrasados" class="summary-value summary-value--red">0</span>
+          </div>
+        </div>
+        <p class="card__note">
+          *Estos datos son simulados para el MVP demo.
+        </p>
+      </section>
+
+      <!-- Filtro por estado -->
+      <section class="card card--filters">
+        <h2 class="card__title">Filtrar por estado</h2>
+        <div class="filter-group">
+          <button class="filter-btn filter-btn--active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="Al día">Al día</button>
+          <button class="filter-btn" data-filter="Próximo">Próximo</button>
+          <button class="filter-btn" data-filter="Atrasado">Atrasado</button>
+        </div>
+        <p class="card__note">
+          Haz clic en un estado para ver solo esos pacientes.
+        </p>
+      </section>
+    </aside>
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+         ========================= -->
+    <section class="content">
+      <!-- Bloque superior: título -->
+      <header class="content__header">
+        <div>
+          <h1>Pacientes en seguimiento</h1>
+          <p class="content__subtitle">
+            Desde aquí la veterinaria registra tratamientos, controla pesos,
+            vacunas y próximas citas de sus papitas. 💚
+          </p>
+        </div>
+      </header>
+
+      <!-- Bloque: tabla de pacientes -->
+      <section class="card card--table">
+  <div class="card__header">
+    <div>
+      <h2 class="card__title">Listado de pacientes</h2>
+      <p class="card__subtitle">
+        Haz clic en un paciente para ver un resumen de su historia clínica.
+      </p>
+    </div>
+
+    <!-- CONTROLES DE TABLA: BUSCADOR -->
+    <div class="table-controls">
+      <div class="search-input">
+        <span class="search-input__icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar por ID, nombre de mascota o dueño..."
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="patients-table">
+      <thead>
+        <tr>
+          <th>Mascota</th>
+          <th>Tipo</th>
+          <th>Dueño</th>
+          <th>Tratamiento</th>
+          <th>Próx. control</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody id="patients-body">
+        <!-- JS llenará esta tabla -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+      <!-- Bloque: registro rápido + detalle de historia -->
+      <div class="content__grid">
+        <!-- Formulario de registro rápido -->
+        <section class="card card--form">
+          <div class="card__header">
+            <h2 class="card__title">➕ Registro rápido de tratamiento</h2>
+            <p class="card__subtitle">
+              Esta sección simula cómo la veterinaria registra un nuevo paciente
+              o un nuevo plan de tratamiento.
+            </p>
+          </div>
+
+          <form id="patient-form" class="form">
+            <div class="form__row">
+              <div class="form__group">
+                <label for="petName">🐶 Nombre de la mascota</label>
+                <input
+                  type="text"
+                  id="petName"
+                  placeholder="Ej: Luna"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="petType">🐾 Tipo</label>
+                <select id="petType" required>
+                  <option value="">Selecciona</option>
+                  <option value="Perro">Perro</option>
+                  <option value="Gato">Gato</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="ownerName">👤 Nombre del dueño</label>
+                <input
+                  type="text"
+                  id="ownerName"
+                  placeholder="Ej: Carlos Pérez"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="treatmentType">🩺 Tratamiento</label>
+                <input
+                  type="text"
+                  id="treatmentType"
+                  placeholder="Ej: Vacuna, desparasitación, post-operatorio..."
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="weight">⚖️ Peso (kg)</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  id="weight"
+                  placeholder="Ej: 7.5"
+                />
+              </div>
+              <div class="form__group">
+                <label for="nextControl">📅 Próximo control</label>
+                <input type="date" id="nextControl" required />
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="notes">📝 Notas / diagnóstico breve</label>
+              <textarea
+                id="notes"
+                rows="2"
+                placeholder="Ej: dermatitis leve, controlar en 10 días..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+              Guardar paciente en demo
+            </button>
+
+            <p id="form-message" class="form__message"></p>
+          </form>
+        </section>
+
+        <!-- Panel de detalle de historia clínica -->
+        <section class="card card--detail">
+          <div class="card__header">
+            <h2 class="card__title">📂 Resumen de historia clínica (demo)</h2>
+            <p class="card__subtitle">
+              Al seleccionar un paciente, verás aquí un pequeño resumen simulado.
+            </p>
+          </div>
+
+          <div id="detail-empty" class="detail-empty">
+            <p>
+              Selecciona un paciente de la tabla para ver un ejemplo de su
+              historia clínica digital. 🐕📋
+            </p>
+          </div>
+
+          <div id="detail-content" class="detail-content">
+            <!-- JS llenará este contenido -->
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- JS DEL PANEL -->
+  <script src="js/vet-demo.js"></script>
+</body>
+</html>

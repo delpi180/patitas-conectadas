@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>PAPITAS CONECTADAS · Panel Dueño</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/owner-panel.css" />
+</head>
+<body>
+  <div class="owner-layout">
+    <!-- HEADER -->
+    <header class="owner-header">
+      <div class="owner-header__left">
+        <div class="brand-logo">🐾</div>
+        <div>
+          <h1 class="brand-title">PAPITAS CONECTADAS</h1>
+          <p class="brand-subtitle">Tu mascota siempre acompañada 💚</p>
+        </div>
+      </div>
+      <div class="owner-header__right">
+        <div class="owner-user">
+          <span class="owner-user__name" id="owner-name">María Torres</span>
+          <span class="owner-user__meta" id="owner-points-label">⭐ 0 puntos</span>
+        </div>
+        <a href="index.html" class="owner-header__link">Salir</a>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="owner-nav">
+      <button class="owner-nav__item owner-nav__item--active" data-section="dashboard">🏠 Inicio</button>
+      <button class="owner-nav__item" data-section="pets">🐶 Mis mascotas</button>
+      <button class="owner-nav__item" data-section="appointments">📅 Citas</button>
+      <button class="owner-nav__item" data-section="vets">🏥 Veterinarias</button>
+      <button class="owner-nav__item" data-section="marketplace">🛒 Marketplace</button>
+      <button class="owner-nav__item" data-section="points">⭐ Puntos</button>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="owner-main">
+      <!-- DASHBOARD -->
+      <section id="section-dashboard" class="owner-section owner-section--active">
+        <div class="owner-grid owner-grid--dashboard">
+          <div class="owner-card owner-card--animated">
+            <h2 class="owner-card__title">Mi mascota principal</h2>
+            <p class="owner-card__subtitle" id="dashboard-main-pet-name">Luna 🐶</p>
+            <p class="owner-card__meta" id="dashboard-main-pet-vet">Veterinaria:</p>
+          </div>
+
+          <div class="owner-card owner-card--animated">
+            <h2 class="owner-card__title">Próxima cita</h2>
+            <p class="owner-card__subtitle" id="dashboard-next-appointment">Sin citas próximas</p>
+            <p class="owner-card__meta">Mantén el calendario al día 📅</p>
+          </div>
+
+          <div class="owner-card owner-card--animated">
+            <h2 class="owner-card__title">Progreso tratamiento</h2>
+            <div class="progress-bar">
+              <div id="dashboard-treatment-progress" class="progress-bar__fill" style="width: 0%"></div>
+            </div>
+            <p class="owner-card__meta" id="dashboard-treatment-label">Sin tratamiento activo</p>
+          </div>
+
+          <div class="owner-card owner-card--animated">
+            <h2 class="owner-card__title">Puntos disponibles</h2>
+            <p class="owner-card__subtitle" id="dashboard-points">⭐ 0 puntos</p>
+            <p class="owner-card__meta">Úsalos en veterinarias afiliadas.</p>
+          </div>
+        </div>
+
+        <div class="owner-grid owner-grid--two">
+          <div class="owner-card owner-card--animated">
+            <h2 class="owner-card__title">Recomendaciones para tu mascota</h2>
+            <ul id="dashboard-recommendations" class="owner-list"></ul>
+          </div>
+
+          <div class="owner-card owner-card--animated">
+            <h2 class="owner-card__title">Veterinarias favoritas</h2>
+            <ul id="dashboard-fav-vets" class="owner-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MIS MASCOTAS -->
+      <section id="section-pets" class="owner-section">
+        <header class="owner-section__header">
+          <div>
+            <h2>Mis mascotas 🐾</h2>
+            <p>Revisa su estado, tratamiento y puntos asociados.</p>
+          </div>
+          <button id="btn-new-pet" class="btn btn--primary">➕ Registrar mascota</button>
+        </header>
+
+        <div id="pets-card-container" class="pets-grid"></div>
+
+        <div id="pet-detail" class="pet-detail pet-detail--empty">
+          <p class="pet-detail__empty">
+            Selecciona una mascota para ver su historia clínica y seguimiento.
+          </p>
+        </div>
+      </section>
+
+      <!-- CITAS -->
+      <section id="section-appointments" class="owner-section">
+        <header class="owner-section__header">
+          <div>
+            <h2>Citas 📅</h2>
+            <p>Próximas y realizadas para todas tus mascotas.</p>
+          </div>
+        </header>
+
+        <div class="owner-grid owner-grid--two">
+          <div class="owner-card owner-card--animated">
+            <h3 class="owner-card__title">Próximas citas</h3>
+            <ul id="appointments-upcoming" class="owner-list"></ul>
+          </div>
+          <div class="owner-card owner-card--animated">
+            <h3 class="owner-card__title">Citas anteriores</h3>
+            <ul id="appointments-past" class="owner-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- VETERINARIAS -->
+      <section id="section-vets" class="owner-section">
+        <header class="owner-section__header">
+          <div>
+            <h2>Veterinarias disponibles 🏥</h2>
+            <p>Elige dónde atender a tu mascota y usar tus puntos.</p>
+          </div>
+        </header>
+
+        <div class="vets-layout">
+          <div id="vets-list" class="vets-grid"></div>
+
+          <div id="vet-detail" class="vet-detail vet-detail--empty">
+            <p class="pet-detail__empty">
+              Selecciona una veterinaria para ver sus servicios y reservar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARKETPLACE -->
+      <section id="section-marketplace" class="owner-section">
+        <header class="owner-section__header">
+          <div>
+            <h2>Marketplace 🛒</h2>
+            <p>Productos y servicios ofrecidos por veterinarias afiliadas.</p>
+          </div>
+          <select id="marketplace-filter-vet" class="owner-select">
+            <option value="ALL">Todas las veterinarias</option>
+          </select>
+        </header>
+
+        <div id="marketplace-list" class="market-grid"></div>
+      </section>
+
+      <!-- PUNTOS -->
+      <section id="section-points" class="owner-section">
+        <header class="owner-section__header">
+          <div>
+            <h2>Mis puntos ⭐</h2>
+            <p>Cómo ganas, en qué los puedes usar y veterinarias afiliadas.</p>
+          </div>
+        </header>
+
+        <div class="owner-grid owner-grid--two">
+          <div class="owner-card owner-card--animated">
+            <h3 class="owner-card__title">Resumen</h3>
+            <p id="points-summary" class="owner-card__subtitle"></p>
+            <ul id="points-rules" class="owner-list"></ul>
+          </div>
+          <div class="owner-card owner-card--animated">
+            <h3 class="owner-card__title">Movimientos recientes</h3>
+            <ul id="points-movements" class="owner-list"></ul>
+          </div>
+        </div>
+
+        <div class="owner-card owner-card--animated">
+          <h3 class="owner-card__title">Veterinarias donde puedo usar mis puntos</h3>
+          <ul id="points-vets" class="owner-list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL GENÉRICO (registro mascota / reserva servicio) -->
+  <div id="modal-overlay-owner" class="modal-overlay">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 id="modal-owner-title"></h3>
+        <button id="modal-owner-close" class="modal__close">✕</button>
+      </div>
+      <form id="modal-owner-form" class="modal__body"></form>
+      <div class="modal__footer">
+        <button type="button" id="modal-owner-cancel" class="btn btn--ghost">Cancelar</button>
+        <button type="submit" form="modal-owner-form" class="btn btn--primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/owner-panel.js"></script>
+</body>
+</html>

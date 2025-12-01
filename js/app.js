@@ -95,3 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("heroVideo");
+  const playBtn = document.getElementById("heroPlayBtn");
+  const frame = document.querySelector(".hero-video-frame");
+
+  if (playBtn && video) {
+    playBtn.addEventListener("click", () => {
+      video.play();
+      frame.classList.add("playing");
+    });
+  }
+});

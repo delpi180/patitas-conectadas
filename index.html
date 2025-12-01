@@ -78,18 +78,21 @@
   </div>
 
   <div class="hero-media">
-    <div class="hero-phone-frame">
-      <!-- Aquí SOLO cambias la ruta de la imagen por tu mockup -->
-      <img
-        src="img/mockups/app-papitas.png"
-        alt="Vista previa de la app móvil PAPITAS CONECTADAS"
-        class="hero-phone-img"
-      />
-    </div>
-    <p class="hero-media-caption">
-      Mockup de la app móvil <strong>PAPITAS CONECTADAS</strong>
-    </p>
+  <div class="hero-video-frame">
+    <video id="heroVideo" class="hero-video" preload="auto">
+      <source src="image\invideo-ai-1080 ¡PatitasConectadas lo hace todo por tu m 2025-12-01.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+
+    <button id="heroPlayBtn" class="hero-video-play">
+      ▶️
+    </button>
   </div>
+  <p class="hero-media-caption">
+    Demo en vivo de PAPITAS CONECTADAS 💚🐾
+  </p>
+</div>
+
 </section>
 
   <!-- =========================================================
@@ -112,8 +115,14 @@
         -->
         <div class="video-placeholder">
           <p>
-            Espacio reservado para tu video demo 🎬<br />
-            (Aquí irán el iframe de YouTube o la etiqueta <code>&lt;video&gt;</code>).
+            <video
+  src="image\video13352241276.mp4"
+  controls
+  autoplay
+  muted
+  loop
+  class="video-demo"
+></video>
           </p>
         </div>
       </div>
